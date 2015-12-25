@@ -11,22 +11,13 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php get_header(); ?>
-        <div id="main"> 
-            <div id="content">
-                <h1>Main Area</h1>
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <h1><?php the_title(); ?></h1>
-                        <h4>Posted on <?php the_time('F jS, Y') ?></h4>
+        <div>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <p class="first-iloveyou"><?php the_title(); ?></p>
                         <p><?php the_content(); ?></p>
                         <hr> <?php endwhile;
-        else: ?>
-                    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
-            </div>
-        <?php get_sidebar(); ?>
-        </div>
-        <div id="delimiter">
-        </div>
-        <?php get_footer(); ?>
+           else: ?>
+                        <p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
+        </div>   
     </body>
 </html>
